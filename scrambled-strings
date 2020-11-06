@@ -1,0 +1,30 @@
+#!/usr/bin/env python
+#  ./scrambled-strings --dictionary lololo --input lalala
+
+import sys, getopt
+import utilities as u
+from read_dictionary import ReadDictionary
+
+def main(argv):
+   dictionary = ''
+   input = ''
+   try:
+      opts, args = getopt.getopt(argv,"",["dictionary=","input="])
+      if len(opts) != 2:
+          print("Correct format: ./scrambled-strings --dictionary <dictionary_file> --input <input_file>")
+          sys.exit()
+   except getopt.GetoptError:
+      print("Correct format: ./scrambled-strings --dictionary <dictionary_file> --input <input_file>")
+      sys.exit()
+
+   for opt, arg in opts:
+        if opt == "--dictionary":
+            dictionary = ReadDictionary(arg).validate_dict()
+        else:
+            input = u.read_file(arg)[0]
+
+   print(dictionary)
+   print('input file is ' + input)
+
+if __name__ == "__main__":
+   main(sys.argv[1:])
