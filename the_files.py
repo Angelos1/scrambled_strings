@@ -10,7 +10,7 @@ class TheFiles:
                 self.validate_dict()
 
             else:
-                self.input = u.read_file(arg)[0]
+                self.input = u.read_file(arg)
 
     # validates the limits for the dictionary
     def validate_dict(self):
