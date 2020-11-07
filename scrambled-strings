@@ -2,8 +2,7 @@
 #  ./scrambled-strings --dictionary lololo --input lalala
 
 import sys, getopt
-import utilities as u
-from read_dictionary import ReadDictionary
+from the_files import TheFiles
 
 def main(argv):
    dictionary = ''
@@ -17,11 +16,11 @@ def main(argv):
       print("Correct format: ./scrambled-strings --dictionary <dictionary_file> --input <input_file>")
       sys.exit()
 
-   for opt, arg in opts:
-        if opt == "--dictionary":
-            dictionary = ReadDictionary(arg).validate_dict()
-        else:
-            input = u.read_file(arg)[0]
+   the_files = TheFiles(opts)
+   # the_files.validate_dict()
+   dictionary = the_files.dictionary
+   input = the_files.input
+
 
    print(dictionary)
    print('input file is ' + input)
