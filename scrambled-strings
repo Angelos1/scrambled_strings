@@ -5,8 +5,7 @@ import sys, getopt
 from the_files import TheFiles
 
 def main(argv):
-   dictionary = ''
-   input = ''
+
    try:
       opts, args = getopt.getopt(argv,"",["dictionary=","input="])
       if len(opts) != 2:
