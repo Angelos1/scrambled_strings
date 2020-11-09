@@ -1,8 +1,9 @@
 #!/usr/bin/env python
-#  ./scrambled-strings --dictionary lololo --input lalala
+#  ./scrambled-strings --dictionary Files/dictionary1 --input Files/input1
 
 import sys, getopt
 from the_files import TheFiles
+from scrambled_words import ScrambledWords
 
 def main(argv):
 
@@ -19,10 +20,9 @@ def main(argv):
    # the_files.validate_dict()
    dictionary = the_files.dictionary
    input = the_files.input
+   a = ScrambledWords(dictionary,input)
+   a.get_scrambled_words_occurences()
 
-
-   print(dictionary)
-   print('input file is ' + input)
 
 if __name__ == "__main__":
    main(sys.argv[1:])
