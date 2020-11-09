@@ -1,12 +1,11 @@
 #!/usr/bin/env python
-#  ./scrambled-strings --dictionary Files/dictionary1 --input Files/input1
 
 import sys, getopt
 from the_files import TheFiles
 from scrambled_words import ScrambledWords
 
 def main(argv):
-
+   # code below makes the program capable to run as a terminal command
    try:
       opts, args = getopt.getopt(argv,"",["dictionary=","input="])
       if len(opts) != 2:
@@ -16,13 +15,11 @@ def main(argv):
       print("Correct format: ./scrambled-strings --dictionary <dictionary_file> --input <input_file>")
       sys.exit()
 
-   the_files = TheFiles(opts)
-   # the_files.validate_dict()
+   the_files = TheFiles(opts) # validate the files
    dictionary = the_files.dictionary
    input = the_files.input
-   a = ScrambledWords(dictionary,input)
-   a.get_scrambled_words_occurences()
-
+   scr = ScrambledWords(dictionary, input)
+   scr.print_scrambled_words_occurrences() # run the main algorithm to get the results
 
 if __name__ == "__main__":
    main(sys.argv[1:])
