@@ -8,8 +8,11 @@ class ScrambledWords:
 
     '''finds the next substring of the text in the long_string, the one that 
     will be compared to the current dictionary_word.
-    It is used for maintaining the frequency array as described in the Analysis
-    section of the Google Competition page
+    It is a complementary function that is not to be used on its own.
+    Used for maintaining the frequency array as described in the Analysis
+    section of the Google Competition page.
+    Takes as input an integer, a string, a ScrambledDictionaryWord object, and a string
+    and updates ScrambledDictionaryWord object's variables
     '''
     def __curr_word_in_text(self, char_index, long_string, curr_dict_word, dict_word):
         curr_dict_word.first_char = long_string[char_index]
@@ -28,7 +31,7 @@ class ScrambledWords:
                 curr_word_in_text = ScrambledDictionaryWord(long_string[0:len(dict_word):]) # current area of the text that we compare to the dictionary word
                 for i in range(chars_in_text):
                     if (i + len(dict_word) <= chars_in_text):
-                        self.__curr_word_in_text(i, long_string, curr_word_in_text, dict_word) #
+                        self.__curr_word_in_text(i, long_string, curr_word_in_text, dict_word) # updating curr_word_in_text without instantiating a new ScrambledDictionaryWord
                         if curr_dict_word.equals(curr_word_in_text):
                             count += 1
                             break;
