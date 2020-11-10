@@ -82,7 +82,7 @@ Analysis of the expected result if we run the program with dictionary2 and input
 * *6th line of input2*: One **scrampled** occurrence for each of the dictionary2 words and another occurrence for words 1,2 and 3.
    <br /> Should expect the output: **Case #5: 6**
    
-####Run the program with dictionary2 and input2:
+#### Run the program with dictionary2 and input2:
 ```
 $ ./scrambled-strings --dictionary Files/dictionary2 --input Files/input2
 ```
@@ -97,7 +97,7 @@ Case #5: 6
 Case #6: 6
 ```
 
-####Run the program with dictionary_sum_gt_105 :
+#### Run the program with dictionary_sum_gt_105 :
 The sum of lengths of all words in the dictionary exceeds 105 therefore it will return an error.
 ```
 $ ./scrambled-strings --dictionary Files/dictionary_sum_gt_105 --input Files/input2
@@ -108,7 +108,7 @@ Dictionary off limits: The sum of lengths of all words in the dictionary exceeds
 ```
 
 
-####Run the program with dictionary_two_words_same :
+#### Run the program with dictionary_two_words_same :
 Two words in the dictionary are the same therefore it will return an error.
 ```
 $ ./scrambled-strings --dictionary Files/dictionary_two_words_same --input Files/input2
@@ -119,7 +119,7 @@ Dictionary off limits: Two or more words in the dictionary are the same
 ```
 
 
-####Run the program with dictionary_word_gt_105_chars :
+#### Run the program with dictionary_word_gt_105_chars :
 A word in the dictionary is greater than 105 letters long, therefore it will return an error.
 ```
 $ ./scrambled-strings --dictionary Files/dictionary_word_gt_105_chars --input Files/input2
@@ -129,7 +129,7 @@ Returns:
 Dictionary off limits: Each word in the dictionary has to be between 2 and 105 letters long
 ```
 
-####Run the program with dictionary_word_lt_2_chars :
+#### Run the program with dictionary_word_lt_2_chars :
 A word in the dictionary is less than 2 letters long, therefore it will return an error.
 ```
 $ ./scrambled-strings --dictionary Files/dictionary_word_lt_2_chars --input Files/input2
@@ -144,12 +144,12 @@ I have followed the same approach described in the analysis section in Google Co
 
 In terms of OOP the code could have been better: More classes and methods in order to have more granular functionalities.
 
-If I had more time I would create more classes in order to make each method do less work and unit test each one of them.
-Some of these unit tests could have been for parsing a file into a list,  
+If I had more time I would create more classes in order to make each method do less work and unit test each one of them.<br /> 
+Some of these unit tests could have been for parsing a file into a list,  <br /> 
 finding the occurrences of a dictionary word in long_string etc.
 
-In order to have been able to test them I would also need to make the methods return the results and not print them directly. 
+In order to have been able to test them I would also need to make the methods return the results and not print them directly. <br /> 
 That would also be a better practise for a more scalable application.
 
-I thought of dockerizing this app but I found that it would make things more difficult for the sake of this exercise.
+I thought of dockerizing this app but I found that it would make things more difficult for the sake of this exercise.<br /> 
 You would need to exec the above command for running the app within the docker container.
