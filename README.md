@@ -150,3 +150,6 @@ finding the occurrences of a dictionary word in long_string etc.
 
 In order to have been able to test them I would also need to make the methods return the results and not print them directly. 
 That would also be a better practise for a more scalable application.
+
+I thought of dockerizing this app but I found that it would make things more difficult for the sake of this exercise.
+You would need to exec the above command for running the app within the docker container.
