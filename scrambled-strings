@@ -5,7 +5,7 @@ from the_files import TheFiles
 from scrambled_words import ScrambledWords
 
 def main(argv):
-   # code below makes the program capable to run as a terminal command
+   # The try block below makes the program capable to run as a terminal command with the required format of the task
    try:
       opts, args = getopt.getopt(argv,"",["dictionary=","input="])
       if len(opts) != 2:
